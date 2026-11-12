@@ -1,8 +1,11 @@
+
 import { Navigate, Route, Routes } from "react-router-dom";
 
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
+import StudentProfile from "./pages/StudentProfile";
+import Resume from "./pages/Resume";
 
 import { useAuth } from "./context/AuthContext";
 
@@ -46,6 +49,25 @@ function App() {
           </ProtectedRoute>
         }
       />
+
+      <Route
+        path="/student-profile"
+        element={
+          <ProtectedRoute>
+            <StudentProfile />
+          </ProtectedRoute>
+        }
+      />
+      
+      <Route
+        path="/resume"
+        element={
+          <ProtectedRoute>
+            <Resume />
+          </ProtectedRoute>
+        }
+      />
+
     </Routes>
   );
 }
